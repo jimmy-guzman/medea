@@ -1,0 +1,38 @@
+{
+  "name": "@medea/client",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "lint": "eslint --fix src/**",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@medea/utils": "workspace:*",
+    "@uiw/react-md-editor": "^3.6.4",
+    "autoprefixer": "^10.0.2",
+    "ky": "^0.28.5",
+    "postcss": "^8.3.6",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-hot-toast": "^2.1.1",
+    "react-json-view": "^1.21.3",
+    "react-query": "^3.24.0",
+    "react-router-dom": "^5.3.0",
+    "rxjs": "^7.3.0",
+    "tailwindcss": "^2.2.15"
+  },
+  "devDependencies": {
+    "@medea/interfaces": "workspace:*",
+    "@testing-library/react": "^12.1.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.9",
+    "@types/tailwindcss": "^2.2.1",
+    "assert": "^2.0.0",
+    "framer-motion": "^4.1.17",
+    "vite": "^2.5.4",
+    "vite-preset-react": "^1.4.1"
+  }
+}

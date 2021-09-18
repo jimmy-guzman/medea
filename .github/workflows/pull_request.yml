@@ -1,0 +1,52 @@
+name: Quality Checks
+
+on: [pull_request]
+
+jobs:
+  code_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2
+        with:
+          version: 6.15.1
+      - name: setup cache
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'pnpm'
+
+      - run: pnpm install
+      - run: pnpm test
+      - run: pnpm build
+
+  commit_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: commitlint
+        uses: wagoid/commitlint-github-action@v4
+        with:
+          configFile: .commitlintrc.yml
+
+  spell_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: streetsidesoftware/cspell-action@v1.3.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          inline: error

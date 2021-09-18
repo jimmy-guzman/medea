@@ -1,0 +1,8 @@
+{
+  "verbose": false,
+  "watch": ["src"],
+  "ignore": ["src/**/*.spec.ts"],
+  "ext": "ts,js,json",
+  "exec": "pnpm build --watch && NODE_ENV=production node --enable-source-maps ./dist/main.js",
+  "legacyWatch": true
+}

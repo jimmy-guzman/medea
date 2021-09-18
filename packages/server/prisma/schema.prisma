@@ -1,0 +1,39 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+model MedeaUser {
+  id        String      @id @default(cuid())
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  email     String      @unique
+  notes     MedeaNote[]
+}
+
+model MedeaNote {
+  id          String     @id @default(cuid())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  title       String
+  description String?
+  // TODO: rename text to note
+  text        String
+  tags        MedeaTag[]
+  MedeaUser   MedeaUser? @relation(fields: [medeaUserId], references: [id])
+  medeaUserId String?
+}
+
+model MedeaTag {
+  id          String     @id @default(cuid())
+  // TODO: add createdAt and updatedAt
+  // TODO: rename title tag
+  title       String
+  MedeaNote   MedeaNote? @relation(fields: [medeaNoteId], references: [id])
+  medeaNoteId String?
+}

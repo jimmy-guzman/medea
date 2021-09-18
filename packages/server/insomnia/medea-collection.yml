@@ -1,0 +1,218 @@
+_type: export
+__export_format: 4
+__export_date: 2021-09-21T00:16:33.696Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_53998cfe999540388e81f4766de58d2e
+    parentId: fld_31e1bc2f46fb45b3a3efb2083c7ee830
+    modified: 1632180426897
+    created: 1632180357109
+    url: '{{ _.local }}/api/health'
+    name: health
+    description: ''
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1632180357109
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_31e1bc2f46fb45b3a3efb2083c7ee830
+    parentId: wrk_f7e60d3f45c34e9a8c094651ff582c70
+    modified: 1631988790977
+    created: 1631988790977
+    name: medeas
+    description: ''
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1631988790977
+    _type: request_group
+  - _id: wrk_f7e60d3f45c34e9a8c094651ff582c70
+    parentId: null
+    modified: 1631988763068
+    created: 1631988763068
+    name: medea
+    description: ''
+    scope: collection
+    _type: workspace
+  - _id: req_2bb8611b972645caa376135622478c72
+    parentId: fld_31e1bc2f46fb45b3a3efb2083c7ee830
+    modified: 1632180103922
+    created: 1632180091081
+    url: '{{ _.local }}/api/docs/json'
+    name: docs
+    description: ''
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1632180091131
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+    # cSpell:ignore req_16927aeec46842c494bc8562f5436ffd
+  - _id: req_16927aeec46842c494bc8562f5436ffd
+    parentId: fld_31e1bc2f46fb45b3a3efb2083c7ee830
+    modified: 1632183340749
+    created: 1631989369564
+    url: '{{ _.local }}/api/medeas'
+    name: medeas
+    description: ''
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"json": {
+        		"_id": "61479711c9ca91b78b341248",
+        		"index": 0,
+        		"guid": "1855c495-7c50-4d06-9df4-89c2042b5424",
+        		"isActive": false,
+        		"balance": "$2,008.89",
+        		"picture": "http://placehold.it/32x32",
+        		"age": 27,
+        		"eyeColor": "brown",
+        		"name": "Rosalinda Gay",
+        		"gender": "female",
+        		"email": "rosalindagay@filodyne.com",
+        		"phone": "+1 (937) 456-3988",
+        		"registered": "2015-04-23T08:16:02 +05:00",
+        		"latitude": -38.24231,
+        		"longitude": -63.987629,
+        		"tags": [
+        			"sit",
+        			"do",
+        			"ea"
+        		],
+        		"friends": [
+        			{
+        				"id": 1,
+        				"name": "Amparo Justice"
+        			},
+        			{
+        				"id": 2,
+        				"name": "Dotson Osborne"
+        			}
+        		],
+        		"greeting": "Hello, Rosalinda Gay! You have 2 unread messages.",
+        		"favoriteFruit": "banana"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc6f017b872c4a6da7c599001a13bb19
+    authentication: {}
+    metaSortKey: -1631989369564
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e62b0be1ead9416db0387b99b2084e8a
+    parentId: fld_31e1bc2f46fb45b3a3efb2083c7ee830
+    modified: 1632079086081
+    created: 1631989260259
+    url: '{{ _.local }}/api/medeas'
+    name: medeas
+    description: ''
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1631989260259
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9624ff5754f443939dc1e487a5d19627
+    parentId: fld_31e1bc2f46fb45b3a3efb2083c7ee830
+    modified: 1632164389003
+    created: 1631988818509
+    url: '{{ _.local }}/api/medeas/:id'
+    name: medeas/:id
+    description: ''
+    method: GET
+    body: {}
+    parameters:
+      - name: id
+        value: '1'
+        description: ''
+        # cSpell:ignore pair_60218cd763944937b2d4fedd732047b0
+        id: pair_60218cd763944937b2d4fedd732047b0
+    headers: []
+    authentication: {}
+    metaSortKey: -1631988818509
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_353a785133139171a46e2c67977a64a25435cdcb
+    parentId: wrk_f7e60d3f45c34e9a8c094651ff582c70
+    modified: 1631988882579
+    created: 1631988763127
+    name: Base Environment
+    data:
+      local: http://127.0.0.1:7000
+    dataPropertyOrder:
+      '&':
+        - local
+    color: null
+    isPrivate: false
+    metaSortKey: 1631988763127
+    _type: environment
+  - _id: jar_353a785133139171a46e2c67977a64a25435cdcb
+    parentId: wrk_f7e60d3f45c34e9a8c094651ff582c70
+    modified: 1631988763128
+    created: 1631988763128
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_c05dd70fbe3d4929963023a05a3bee0a
+    parentId: wrk_f7e60d3f45c34e9a8c094651ff582c70
+    modified: 1631988763070
+    created: 1631988763070
+    fileName: medea
+    contents: ''
+    contentType: yaml
+    _type: api_spec
+  - _id: env_af836b684f274a239115796d681491f0
+    parentId: env_353a785133139171a46e2c67977a64a25435cdcb
+    modified: 1632180489451
+    created: 1632180462823
+    name: local
+    data:
+      local: http://127.0.0.1:7000
+    dataPropertyOrder:
+      '&':
+        - local
+    color: null
+    isPrivate: false
+    metaSortKey: 1632180462823
+    _type: environment

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "nrwl.angular-console",
+    "dbaeumer.vscode-eslint",
+    "timonwong.shellcheck",
+    "bradlc.vscode-tailwindcss",
+    "prisma.prisma"
+  ]
+}

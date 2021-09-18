@@ -1,0 +1,71 @@
+{
+  "name": "medea",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "nx run-many --target=dev --all --parallel",
+    "build": "nx run-many --target=build --all --parallel",
+    "serve": "nx run-many --target=serve --all --parallel",
+    "lint": "nx run-many --target=lint --all --parallel",
+    "format": "nx run-many --target=format --all --parallel",
+    "test": "jest",
+    "db:up": "nx run @medea/server:db-up",
+    "db:down": "nx run @medea/server:db-down",
+    "db:studio": "nx run @medea/server:studio",
+    "dep-graph": "nx dep-graph",
+    "build:docs": "typedoc",
+    "prepare": "is-ci || husky install"
+  },
+  "gitzy": {
+    "useCommitlintConfig": true
+  },
+  "lint-staged": {
+    "*.{md,json,yml,ts,tsx}": [
+      "pnpm nx affected --uncommitted --target format"
+    ],
+    "*.{js,ts,tsx,spec}": [
+      "pnpm nx affected --uncommitted --target lint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmy-guzman/medea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmy-guzman/medea/issues"
+  },
+  "homepage": "https://github.com/jimmy-guzman/medea#readme",
+  "devDependencies": {
+    "@nrwl/cli": "latest",
+    "@nrwl/tao": "latest",
+    "@nrwl/workspace": "latest",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "commitlint": "^13.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gitzy": "^2.0.1",
+    "husky": "^7.0.2",
+    "is-ci": "^3.0.0",
+    "jest": "^27.2.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.5",
+    "typedoc": "^0.22.4",
+    "typescript": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6"
+  }
+}

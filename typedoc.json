@@ -1,0 +1,5 @@
+{
+  "entryPoints": ["packages/utils", "packages/interfaces"],
+  "out": "docs",
+  "entryPointStrategy": "packages"
+}

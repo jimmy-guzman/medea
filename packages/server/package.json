@@ -1,0 +1,35 @@
+{
+  "name": "@medea/server",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "esbuild src/main.ts --bundle --sourcemap --outdir=dist --loader:.prisma=file --asset-names=[name] --platform=node --minify --external:@prisma/client --external:fastify-swagger",
+    "serve": "node dist/main.js",
+    "lint": "eslint --fix src/**",
+    "format": "prettier --write .",
+    "db-up": "docker compose up",
+    "db-down": "docker compose down",
+    "db:migrate": "prisma migrate dev --preview-feature --skip-generate --name",
+    "db:generate": "pnpm dlx prisma generate",
+    "studio": "pnpm dlx prisma studio",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "3.1.1",
+    "fastify": "^3.21.3",
+    "fastify-cors": "^6.0.2",
+    "fastify-error": "^0.3.1",
+    "fastify-healthcheck": "^3.1.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-swagger": "^4.12.0",
+    "pino-pretty": "^7.0.1"
+  },
+  "devDependencies": {
+    "@medea/interfaces": "workspace:*",
+    "@types/node": "^16.9.2",
+    "@types/pino": "^6.3.11",
+    "esbuild": "^0.12.28",
+    "nodemon": "^2.0.12",
+    "prisma": "3.1.1"
+  }
+}
