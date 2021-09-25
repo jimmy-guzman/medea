@@ -11,9 +11,7 @@
   "dependencies": {
     "@medea/utils": "workspace:*",
     "@uiw/react-md-editor": "^3.6.4",
-    "autoprefixer": "^10.0.2",
     "ky": "^0.28.5",
-    "postcss": "^8.3.6",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-hot-toast": "^2.1.1",
@@ -31,7 +29,10 @@
     "@types/react-router-dom": "^5.1.9",
     "@types/tailwindcss": "^2.2.1",
     "assert": "^2.0.0",
+    "autoprefixer": "^10.0.2",
     "framer-motion": "^4.1.17",
+    "postcss": "^8.3.6",
+    "rollup-plugin-visualizer": "^5.5.2",
     "vite": "^2.5.4",
     "vite-preset-react": "^1.4.1"
   }
