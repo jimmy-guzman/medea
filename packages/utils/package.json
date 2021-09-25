@@ -1,0 +1,16 @@
+{
+  "name": "@medea/utils",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "eslint --fix src/**",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@medea/interfaces": "workspace:*"
+  }
+}

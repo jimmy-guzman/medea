@@ -1,0 +1,49 @@
+{
+  "extends": "@nrwl/workspace/presets/npm.json",
+  "npmScope": "medea",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint", "package", "prepare"]
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": true,
+        "projects": "dependencies"
+      }
+    ],
+    "prepare": [
+      {
+        "target": "prepare",
+        "projects": "dependencies"
+      }
+    ],
+    "package": [
+      {
+        "target": "package",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "@medea/client": {
+      "implicitDependencies": []
+    },
+    "@medea/server": {
+      "implicitDependencies": []
+    },
+    "@medea/interfaces": {
+      "implicitDependencies": []
+    },
+    "@medea/utils": {
+      "implicitDependencies": []
+    }
+  },
+  "affected": {
+    "defaultBase": "master"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "projects": {
+    "@medea/client": {
+      "root": "packages/client",
+      "projectType": "application"
+    },
+    "@medea/server": {
+      "root": "packages/server",
+      "projectType": "application"
+    },
+    "@medea/interfaces": {
+      "root": "packages/interfaces",
+      "projectType": "library"
+    },
+    "@medea/utils": {
+      "root": "packages/utils",
+      "projectType": "library"
+    }
+  }
+}

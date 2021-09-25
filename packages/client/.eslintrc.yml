@@ -1,0 +1,15 @@
+extends:
+  - '../../.eslintrc.yml'
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - plugin:jsx-a11y/recommended
+plugins:
+  - react
+  - jsx-a11y
+settings:
+  react:
+    version: detect
+rules:
+  react/jsx-uses-react: off
+  react/react-in-jsx-scope: off
+  react/prop-types: off
