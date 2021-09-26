@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "nodemon",
-    "build": "esbuild src/main.ts --bundle --sourcemap --outdir=dist --loader:.prisma=file --asset-names=[name] --platform=node --minify --external:@prisma/client --external:fastify-swagger",
+    "build": "node ./scripts/build",
     "serve": "node dist/main.js",
     "lint": "eslint --fix src/**",
     "format": "prettier --write .",
@@ -29,6 +29,7 @@
     "@types/node": "^16.9.2",
     "@types/pino": "^6.3.11",
     "esbuild": "^0.12.28",
+    "esbuild-node-externals": "^1.3.0",
     "nodemon": "^2.0.12",
     "prisma": "3.1.1"
   }
