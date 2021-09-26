@@ -1,5 +1,10 @@
 import { lazy } from 'react'
 
+/**
+ * Allows for `React.lazy` to leverage named exports from dynamic imports
+ * @example
+ * const { Home } = namedLazy(() => import('./pages/home'))
+ */
 export const namedLazy = <
   T extends Record<string, React.ComponentType<unknown>>
 >(
