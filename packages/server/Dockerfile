@@ -1,3 +1,5 @@
+ARG DATABASE_URL
+
 # setup npnpm
 FROM node:14 as pnpm
 ENV PNPM_VERSION 6.15.1
@@ -9,6 +11,7 @@ WORKDIR /repo
 
 COPY packages/ packages/
 
+COPY .npmrc .npmrc
 COPY package.json package.json
 COPY pnpm-workspace.yaml pnpm-workspace.yaml
 COPY pnpm-lock.yaml pnpm-lock.yaml
@@ -16,7 +19,7 @@ COPY nx.json nx.json
 COPY workspace.json workspace.json
 COPY tsconfig.json tsconfig.json
 
-RUN pnpm install -r --frozen-lockfile --unsafe-perm
+RUN pnpm install -r --frozen-lockfile
 RUN	rm -rf ~/.pnpm-store;
 
 # build asssets
@@ -26,10 +29,9 @@ WORKDIR /repo
 COPY /packages/ /repo/packages/
 RUN pnpm run build
 
-# build nginx image
-FROM node:14
-COPY --from=build /repo/packages/client/dist /var/www
+# build node server
+FROM build
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["pnpm", "nx", "run", "@medea/server:serve"]
