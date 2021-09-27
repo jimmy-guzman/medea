@@ -1,10 +1,10 @@
 import ky from 'ky'
 
 import {
-  CreateMedeaNoteRequestBody,
+  MutateMedeaNoteBody,
+  CreateMedeaNoteBody,
   MedeaNote,
-  UpdateMedeaNoteRequestBody,
-} from '@medea/interfaces'
+} from '@medea/models'
 
 const api = ky.create({ prefixUrl: 'http://127.0.0.1:7000' })
 
@@ -17,14 +17,14 @@ export const getMedeaNote = async (id: string): Promise<MedeaNote> => {
 }
 
 export const createMedeaNote = async (
-  json: CreateMedeaNoteRequestBody
+  json: CreateMedeaNoteBody
 ): Promise<{ id: string; createAt: string }> => {
   return api.post(`notes`, { json }).json()
 }
 
 export const updateMedeaNote = async (
   id: string,
-  json: UpdateMedeaNoteRequestBody
+  json: MutateMedeaNoteBody
 ): Promise<{ id: string; updateAt: string }> => {
   return api.put(`notes/${id}`, { json }).json()
 }

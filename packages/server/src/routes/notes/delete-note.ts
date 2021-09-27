@@ -1,27 +1,28 @@
 import { FastifyInstance } from 'fastify'
 
-import { MEDEA_NOTES_ROUTE } from '../../constants'
 import {
-  GenericError,
+  MedeaNoteParamsSchema,
+  MedeaNoteParams,
   MedeaError,
-  MissingParamError,
-  NotFoundError,
-} from '../errors'
+} from '@medea/models'
+
+import { MEDEA_NOTES_ROUTE } from '../../constants'
+import { GenericError, NotFoundError } from '../errors'
+
+const schema = {
+  params: MedeaNoteParamsSchema,
+}
 
 export const deleteMedeaNote = async (
   server: FastifyInstance
 ): Promise<void> => {
   server.delete<{
-    Params: { id: string }
-    Reply: { id: string } | MedeaError
-  }>(`${MEDEA_NOTES_ROUTE}/:id`, {}, async (request, reply) => {
+    Params: MedeaNoteParams
+    Reply: number | MedeaError
+  }>(`${MEDEA_NOTES_ROUTE}/:id`, { schema }, async (request, reply) => {
     const id = request.params.id
 
     try {
-      if (!id) {
-        return reply.code(400).send(new MissingParamError('id'))
-      }
-
       await server.prisma.medeaTag.deleteMany({
         where: { medeaNoteId: id },
       })
@@ -31,7 +32,7 @@ export const deleteMedeaNote = async (
       })
 
       if (medea) {
-        return reply.code(200).send({ id })
+        return reply.code(204).send(204)
       }
 
       return reply.code(404).send(new NotFoundError(id))
@@ -39,6 +40,7 @@ export const deleteMedeaNote = async (
       if (
         (error as Error).message.includes('Record to delete does not exist')
       ) {
+        request.log.error(error)
         return reply.code(404).send(new NotFoundError(id))
       }
       request.log.error(error)

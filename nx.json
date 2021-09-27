@@ -12,7 +12,7 @@
   "targetDependencies": {
     "build": [
       {
-        "target": true,
+        "target": "build",
         "projects": "dependencies"
       }
     ],
@@ -31,15 +31,30 @@
   },
   "projects": {
     "@medea/client": {
-      "implicitDependencies": []
+      "implicitDependencies": [],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": ["dependencies", "devDependencies"]
+        }
+      ]
     },
     "@medea/server": {
-      "implicitDependencies": []
+      "implicitDependencies": [],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": ["dependencies", "devDependencies"]
+        }
+      ]
     },
-    "@medea/interfaces": {
+    "@medea/types": {
       "implicitDependencies": []
     },
     "@medea/utils": {
+      "implicitDependencies": []
+    },
+    "@medea/models": {
       "implicitDependencies": []
     }
   },

@@ -7,7 +7,7 @@ rules:
   header-min-length: [2, always, 5]
   scope-empty: [2, never]
   scope-case: [2, always, lower-case]
-  scope-enum: [2, always, [medea, deps, server, interfaces, client, utils]]
+  scope-enum: [2, always, [medea, deps, server, types, 'models', client, utils]]
   subject-case: [2, never, [sentence-case, start-case, pascal-case, upper-case]]
   subject-empty: [2, never]
   subject-full-stop: [2, never, '.']

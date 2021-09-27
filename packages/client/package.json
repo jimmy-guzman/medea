@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "serve": "vite preview",
     "lint": "eslint --fix src/**",
     "format": "prettier --write ."
@@ -22,7 +22,8 @@
     "tailwindcss": "^2.2.15"
   },
   "devDependencies": {
-    "@medea/interfaces": "workspace:*",
+    "@medea/models": "workspace:*",
+    "@medea/types": "workspace:*",
     "@testing-library/react": "^12.1.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

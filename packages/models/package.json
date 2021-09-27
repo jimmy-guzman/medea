@@ -1,0 +1,22 @@
+{
+  "name": "@medea/models",
+  "version": "0.0.0",
+  "description": "schemas & interfaces for server and client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "rm -rf dist && tsup src/index.ts --dts --minify --watch --sourcemap",
+    "build": "tsup src/index.ts --dts --minify",
+    "lint": "eslint --fix src/**",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sinclair/typebox": "^0.20.5"
+  },
+  "devDependencies": {
+    "tsup": "^5.2.1"
+  }
+}

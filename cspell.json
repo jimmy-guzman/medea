@@ -35,6 +35,8 @@
     "tailwindcss",
     "timonwong",
     "transpiling",
+    "tsup",
+    "typebox",
     "typedoc",
     "vite",
     "vitejs",

@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@medea/interfaces": "workspace:*"
+    "@medea/types": "workspace:*"
   }
 }

@@ -1,6 +1,6 @@
 import ReactJson from 'react-json-view'
 
-import { JSONLike } from '@medea/interfaces'
+import { JSONLike } from '@medea/types'
 import { formatDate } from '@medea/utils'
 
 import { Badge } from '../badge'

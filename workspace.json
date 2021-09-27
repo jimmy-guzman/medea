@@ -9,12 +9,16 @@
       "root": "packages/server",
       "projectType": "application"
     },
-    "@medea/interfaces": {
-      "root": "packages/interfaces",
+    "@medea/types": {
+      "root": "packages/types",
       "projectType": "library"
     },
     "@medea/utils": {
       "root": "packages/utils",
+      "projectType": "library"
+    },
+    "@medea/models": {
+      "root": "packages/models",
       "projectType": "library"
     }
   }
