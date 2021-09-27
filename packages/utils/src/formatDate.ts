@@ -1,4 +1,4 @@
-import { KnownKeys } from '@medea/interfaces'
+import { KnownKeys } from '@medea/types'
 
 const time = <const>{ hour: 'numeric', minute: 'numeric', hour12: true }
 const year = <const>{ year: 'numeric' }

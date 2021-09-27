@@ -1,7 +1,9 @@
 import { FastifyInstance } from 'fastify'
 
+import { MedeaError } from '@medea/models'
+
 import { MEDEA_NOTES_ROUTE } from '../../constants'
-import { GenericError, MedeaError } from './../errors'
+import { GenericError } from './../errors'
 
 import { MedeaNote } from '.prisma/client'
 

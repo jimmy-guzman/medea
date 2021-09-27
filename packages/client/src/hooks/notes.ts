@@ -5,7 +5,7 @@ import {
   useQueryClient,
 } from 'react-query'
 
-import { MedeaNote } from '@medea/interfaces'
+import { MedeaNote } from '@medea/models'
 
 import {
   createMedeaNote,

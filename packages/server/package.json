@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "nodemon",
-    "build": "node ./scripts/build",
+    "build": "rm -rf dist && node ./scripts/build",
     "serve": "node dist/main.js",
     "lint": "eslint --fix src/**",
     "format": "prettier --write .",
@@ -25,7 +25,7 @@
     "pino-pretty": "^7.0.1"
   },
   "devDependencies": {
-    "@medea/interfaces": "workspace:*",
+    "@medea/models": "workspace:*",
     "@types/node": "^16.9.2",
     "@types/pino": "^6.3.11",
     "esbuild": "^0.12.28",

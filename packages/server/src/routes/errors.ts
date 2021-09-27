@@ -1,4 +1,4 @@
-import createError, { FastifyError } from 'fastify-error'
+import createError from 'fastify-error'
 
 export const GenericError = createError(
   'MEDEA_ERR',
@@ -17,5 +17,3 @@ export const NotFoundError = createError(
   `No medea was found for id: %s`,
   404
 )
-
-export type MedeaError = FastifyError

@@ -1,5 +1,7 @@
 {
-  "entryPoints": ["packages/utils", "packages/interfaces"],
+  "entryPoints": ["packages/utils", "packages/types", "packages/models"],
   "out": "docs",
-  "entryPointStrategy": "packages"
+  "entryPointStrategy": "packages",
+  "darkHighlightTheme": "material-default",
+  "lightHighlightTheme": "material-lighter"
 }

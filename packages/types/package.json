@@ -1,5 +1,5 @@
 {
-  "name": "@medea/interfaces",
+  "name": "@medea/types",
   "version": "0.0.0",
   "description": "",
   "main": "src/index.ts",
