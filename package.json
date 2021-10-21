@@ -39,9 +39,9 @@
   },
   "homepage": "https://github.com/jimmy-guzman/medea#readme",
   "devDependencies": {
-    "@nrwl/cli": "latest",
-    "@nrwl/tao": "latest",
-    "@nrwl/workspace": "latest",
+    "@nrwl/cli": "^13.0.1",
+    "@nrwl/tao": "^13.0.1",
+    "@nrwl/workspace": "^13.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",

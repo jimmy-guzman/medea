@@ -1,6 +1,6 @@
 {
-  "entryPoints": ["packages/utils", "packages/types", "packages/models"],
-  "out": "docs",
+  "entryPoints": ["libs/*"],
+  "out": ".docs",
   "entryPointStrategy": "packages",
   "darkHighlightTheme": "material-default",
   "lightHighlightTheme": "material-lighter"
