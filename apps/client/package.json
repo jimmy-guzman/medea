@@ -6,7 +6,8 @@
     "build": "rm -rf dist && tsc && vite build",
     "serve": "vite preview",
     "lint": "eslint --fix src/**",
-    "format": "prettier --write ."
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@medea/utils": "workspace:*",

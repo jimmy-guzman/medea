@@ -1,9 +1,9 @@
-name: Quality Checks
+name: quality_checks
 
 on: [pull_request]
 
 jobs:
-  code_check:
+  code:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +21,18 @@ jobs:
           node-version: '14'
           cache: 'pnpm'
 
-      - run: pnpm install
-      - run: pnpm test
-      - run: pnpm build
+      - name: install
+        run: pnpm install
+      - name: build
+        run: pnpm build
+      - name: lint
+        run: pnpm lint
+      - name: format
+        run: pnpm format
+      - name: test
+        run: pnpm test
 
-  commit_check:
+  commits:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +45,7 @@ jobs:
         with:
           configFile: .commitlintrc.yml
 
-  spell_check:
+  spelling:
     runs-on: ubuntu-latest
 
     steps:
