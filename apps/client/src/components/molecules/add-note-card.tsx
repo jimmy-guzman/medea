@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 import { formatDate } from '@medea/utils'
 
-import { useCreateMedeaNote, useNavigate } from '../hooks'
+import { useCreateMedeaNote, useNavigate } from '../../hooks'
+import { IconButton } from '../atoms'
 import { Badges } from './badges'
-import { IconButton } from './icon-button'
 
 export const AddNoteCard = (): JSX.Element => {
   const navigate = useNavigate()

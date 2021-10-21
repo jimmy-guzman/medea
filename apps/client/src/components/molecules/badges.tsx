@@ -1,4 +1,4 @@
-import { Badge } from '.'
+import { Badge } from '../atoms'
 
 interface BadgesProps {
   tags: string[]

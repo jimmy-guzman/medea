@@ -3,7 +3,7 @@ import ReactJson from 'react-json-view'
 import { JSONLike } from '@medea/types'
 import { formatDate } from '@medea/utils'
 
-import { Badge } from '../badge'
+import { Badge } from '../../atoms'
 import { theme } from './theme'
 
 interface JsonBoxProps<T extends JSONLike> {
