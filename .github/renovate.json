@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "semanticCommits": "enabled",
+  "reviewers": ["@jimmy-guzman"],
+  "commitMessageAction": "bump",
+  "commitMessagePrefix": "chore(deps): 🤖 ",
+  "commitMessageTopic": "`{{depName}}`",
+  "labels": ["scope:deps", "type:chore"],
+  "rangeStrategy": "replace",
+  "updateInternalDeps": false,
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "matchPackagePatterns": ["@nrwl"],
+      "groupName": "nx"
+    },
+    {
+      "matchPackagePatterns": ["fastify"],
+      "groupName": "fastify"
+    }
+  ]
+}
