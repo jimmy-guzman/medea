@@ -29,35 +29,6 @@
       }
     ]
   },
-  "projects": {
-    "@medea/client": {
-      "implicitDependencies": [],
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": ["dependencies", "devDependencies"]
-        }
-      ]
-    },
-    "@medea/server": {
-      "implicitDependencies": [],
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": ["dependencies", "devDependencies"]
-        }
-      ]
-    },
-    "@medea/types": {
-      "implicitDependencies": []
-    },
-    "@medea/utils": {
-      "implicitDependencies": []
-    },
-    "@medea/models": {
-      "implicitDependencies": []
-    }
-  },
   "affected": {
     "defaultBase": "master"
   }

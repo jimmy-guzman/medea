@@ -2,24 +2,47 @@
   "version": 2,
   "projects": {
     "@medea/client": {
-      "root": "packages/client",
-      "projectType": "application"
-    },
-    "@medea/server": {
-      "root": "packages/server",
-      "projectType": "application"
-    },
-    "@medea/types": {
-      "root": "packages/types",
-      "projectType": "library"
-    },
-    "@medea/utils": {
-      "root": "packages/utils",
-      "projectType": "library"
+      "root": "apps/client",
+      "projectType": "application",
+      "implicitDependencies": [],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": [
+            "dependencies",
+            "devDependencies"
+          ]
+        }
+      ]
     },
     "@medea/models": {
-      "root": "packages/models",
-      "projectType": "library"
+      "root": "libs/models",
+      "projectType": "library",
+      "implicitDependencies": []
+    },
+    "@medea/server": {
+      "root": "apps/server",
+      "projectType": "application",
+      "implicitDependencies": [],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": [
+            "dependencies",
+            "devDependencies"
+          ]
+        }
+      ]
+    },
+    "@medea/types": {
+      "root": "libs/types",
+      "projectType": "library",
+      "implicitDependencies": []
+    },
+    "@medea/utils": {
+      "root": "libs/utils",
+      "projectType": "library",
+      "implicitDependencies": []
     }
   }
 }

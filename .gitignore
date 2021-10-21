@@ -105,3 +105,4 @@ dist
 
 # typedoc
 docs/
+.docs/
