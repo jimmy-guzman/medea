@@ -8,7 +8,8 @@
     "dev": "rm -rf dist && tsup src/index.ts --dts --minify --watch --sourcemap",
     "build": "tsup src/index.ts --dts --minify",
     "lint": "eslint --fix src/**",
-    "format": "prettier --write ."
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "keywords": [],
   "author": "",

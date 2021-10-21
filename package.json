@@ -9,6 +9,7 @@
     "serve": "nx run-many --target=serve --all --parallel",
     "lint": "nx run-many --target=lint --all --parallel",
     "format": "nx run-many --target=format --all --parallel",
+    "format:fix": "nx run-many --target='format:fix' --all --parallel",
     "test": "jest",
     "db:up": "nx run @medea/server:db-up",
     "db:down": "nx run @medea/server:db-down",
@@ -22,7 +23,7 @@
   },
   "lint-staged": {
     "*.{md,json,yml,ts,tsx}": [
-      "pnpm nx affected --uncommitted --target format"
+      "pnpm nx affected --uncommitted --target format:fix"
     ],
     "*.{js,ts,tsx,spec}": [
       "pnpm nx affected --uncommitted --target lint"
