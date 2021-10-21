@@ -1,4 +1,4 @@
-export interface ButtonProps {
+interface ButtonProps {
   children: React.ReactNode
   onClick: () => void
 }

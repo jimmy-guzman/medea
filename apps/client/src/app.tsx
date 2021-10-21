@@ -2,13 +2,14 @@ import { AnimatePresence } from 'framer-motion'
 import { Suspense } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 
-import { Container, Navigation, Transition } from './components'
+import { Container, Transition } from './components/atoms'
+import { Navigation } from './components/molecules'
 import { namedLazy } from './utils'
 
 const { Home } = namedLazy(() => import('./pages/home'))
 const { Json } = namedLazy(() => import('./pages/json'))
 const { NotFound } = namedLazy(() => import('./pages/not-found'))
-const { Notes } = namedLazy(() => import('./pages/notes'))
+const { Note } = namedLazy(() => import('./pages/note'))
 
 export const App = (): JSX.Element => {
   const location = useLocation()
@@ -32,7 +33,7 @@ export const App = (): JSX.Element => {
               </Route>
               <Route path='/notes/:id'>
                 <Transition>
-                  <Notes />
+                  <Note />
                 </Transition>
               </Route>
               <Route path='/json/:id'>

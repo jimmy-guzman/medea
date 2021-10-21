@@ -1,5 +1,5 @@
-import pkg from '../../../package.json'
-import { DbIcon } from '../../icons'
+import pkg from '../../../../package.json'
+import { DbIcon } from '../../../icons'
 
 export const Logo = (): JSX.Element => {
   return (

@@ -1,6 +1,7 @@
-import { ButtonProps } from './button'
-
-type IconButtonProps = ButtonProps
+interface IconButtonProps {
+  children: React.ReactNode
+  onClick: () => void
+}
 
 export const IconButton = ({
   children,

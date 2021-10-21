@@ -4,23 +4,16 @@ import { useParams } from 'react-router-dom'
 import { formatDate } from '@medea/utils'
 
 import {
-  Alert,
-  MDPreview,
-  Skeleton,
-  Button,
-  Badges,
-  MDEdit,
-  Link,
-} from '../components'
-import {
   useDeleteMedeaNote,
   useMedeaNote,
   useNavigate,
   useUpdateMedeaNote,
-} from '../hooks'
-import { EyeIcon, PencilIcon, TrashIcon } from '../icons'
+} from '../../hooks'
+import { EyeIcon, PencilIcon, TrashIcon } from '../../icons'
+import { Alert, Skeleton, Button, Link } from '../atoms'
+import { MDPreview, Badges, MDEdit } from '../molecules'
 
-export const Notes = (): JSX.Element => {
+export const ViewNote = (): JSX.Element => {
   const navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
   const { isLoading, isSuccess, data } = useMedeaNote(id)

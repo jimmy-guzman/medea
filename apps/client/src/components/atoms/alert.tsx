@@ -1,4 +1,4 @@
-import { SadFaceIcon } from '../icons'
+import { SadFaceIcon } from '../../icons'
 
 interface AlertProps {
   children: React.ReactNode
