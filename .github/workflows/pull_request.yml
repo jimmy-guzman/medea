@@ -31,6 +31,8 @@ jobs:
         run: pnpm format
       - name: test
         run: pnpm test
+      - name: build storybook
+        run: pnpm build:sb
 
   commits:
     runs-on: ubuntu-latest

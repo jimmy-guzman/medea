@@ -21,6 +21,10 @@
     {
       "matchPackagePatterns": ["fastify"],
       "groupName": "fastify"
+    },
+    {
+      "matchPackagePatterns": ["storybook"],
+      "groupName": "storybook"
     }
   ]
 }
