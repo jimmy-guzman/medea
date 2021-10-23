@@ -16,16 +16,19 @@
 
 ## Getting Started
 
+- `pnpm env use --global 14`
 - `pnpm install` will install everything
 - `pnpm db:up` will start the postgres docker container
   - `pnpm db:down` to shut it down
 - `pnpm dev` will start both client and server in dev mode
   - You can view api docs at http://127.0.0.1:7000/api/docs
-  - App will launch at http://localhost:3000/
-- `pnpm db:studio` will launch prisma's studio to visually interact with the ddb
-  - You view db at http://localhost:5555
+  - App will launch at http://localhost:3000
+- `pnpm db:studio` will launch prisma's studio to visually interact with the db
+  - You can view db at http://localhost:5555
+- `pnpm sb` will launch storybook at http://localhost:6006
 - `pnpm test` will run unit tests
   - `pnpm test --watch` to run in watch mode
+- `pnpm gitzy` to commit using a cli that follows conventional commits
 - `formatting` and `linting` will happen before committing
 
 ## Usage
@@ -78,6 +81,7 @@ curl --request POST \
 - `docker` 👷
 - `pnpm` for it's workspaces and the boost in installation speed ⚡️
 - `nx`(only the cli) for it's computational caching ⚡️, affected commands ⚡️ and workspace visualization 🔨
+- `storybook`
 
 ### Client
 

@@ -106,3 +106,6 @@ dist
 # typedoc
 docs/
 .docs/
+
+# storybook
+.storybook-dist
