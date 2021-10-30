@@ -13,6 +13,7 @@
     "@medea/utils": "workspace:*",
     "@uiw/react-md-editor": "^3.6.4",
     "ky": "^0.28.5",
+    "react-hook-form": "^7.18.0",
     "react-hot-toast": "^2.1.1",
     "react-json-view": "^1.21.3",
     "react-query": "^3.24.0",
@@ -20,6 +21,7 @@
     "rxjs": "^7.3.0"
   },
   "devDependencies": {
+    "@medea/mocks": "workspace:*",
     "@medea/models": "workspace:*",
     "@medea/types": "workspace:*",
     "@testing-library/react": "^12.1.0",

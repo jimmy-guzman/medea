@@ -1,12 +1,15 @@
-interface BadgePros {
+export interface BadgeProps {
   children: React.ReactNode
+  /**
+   * @todo should retain non inverted size
+   */
   isInverted?: boolean
 }
 
 export const Badge = ({
   children,
   isInverted = false,
-}: BadgePros): JSX.Element => {
+}: BadgeProps): JSX.Element => {
   return (
     <span
       className={`inline-flex items-center justify-center px-2 py-1 text-xs font-semi-bold leading-none rounded my-1 ${

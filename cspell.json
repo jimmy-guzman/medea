@@ -57,6 +57,7 @@
     "**/dist/**",
     ".gitignore",
     "**/migrations/**",
-    ".vscode/**"
+    ".vscode/**",
+    "public/mockServiceWorker.js"
   ]
 }

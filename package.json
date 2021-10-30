@@ -16,8 +16,8 @@
     "db:studio": "nx run @medea/server:studio",
     "dep-graph": "nx dep-graph",
     "build:docs": "typedoc",
-    "sb": "start-storybook -p 6006 --quiet",
-    "build:sb": "build-storybook -o .storybook-dist --quiet",
+    "sb": "start-storybook -p 6006 --quiet -s public",
+    "build:sb": "build-storybook -o .storybook-dist --quiet -s public",
     "prepare": "is-ci || husky install"
   },
   "gitzy": {
@@ -77,6 +77,7 @@
     "is-ci": "^3.0.0",
     "jest": "^27.2.0",
     "lint-staged": "^11.1.2",
+    "msw": "^0.35.0",
     "postcss": "^8.3.6",
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.5",
@@ -87,5 +88,8 @@
   "engines": {
     "node": ">=14",
     "pnpm": ">=6"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

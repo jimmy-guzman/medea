@@ -1,14 +1,17 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-interface MedeaNavLinkProps {
-  to?: string
-  children: React.ReactNode
+export interface NavigationLinkProps {
+  path?: string
+  name?: string
+  children?: React.ReactNode
 }
 
-export const MedeaNavLink = ({
-  to = '/',
+export const NavigationLink = ({
+  name,
+  path = '/',
   children,
-}: MedeaNavLinkProps): JSX.Element => {
+}: NavigationLinkProps): JSX.Element => {
   return (
     <NavLink
       className={(isActive) =>
@@ -16,9 +19,9 @@ export const MedeaNavLink = ({
           isActive ? 'text-vivid-tangerine-400' : 'font-semibold'
         }`
       }
-      to={to}
+      to={path}
     >
-      {children}
+      {children ? children : name}
     </NavLink>
   )
 }

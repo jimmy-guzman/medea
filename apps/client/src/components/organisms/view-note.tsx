@@ -38,7 +38,7 @@ export const ViewNote = (): JSX.Element => {
           tags={[formatDate(updatedAt), ...tags.map(({ title }) => title)]}
         />
         {isEditMode ? (
-          <MDEdit id={id} prevMd={text} mutate={updateMedeaNote} />
+          <MDEdit markdownToEdit={text} handleEdit={updateMedeaNote} />
         ) : (
           <MDPreview md={text} />
         )}
