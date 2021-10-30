@@ -13,4 +13,14 @@ module.exports = {
       },
     },
   ],
+  webpackFinal: async (config) => {
+    // https://github.com/framer/motion/issues/1307#issuecomment-953621828
+    config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules/,
+      type: 'javascript/auto',
+    })
+
+    return config
+  },
 }
