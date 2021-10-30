@@ -24,7 +24,7 @@ export const ViewNotes = (): JSX.Element => {
           return (
             <div key={id} className='mb-4'>
               <Badges
-                alignment='right'
+                align='right'
                 tags={[
                   ...tags.map(({ title }) => title),
                   formatDate(updatedAt, 'MMM d, y'),

@@ -1,22 +1,17 @@
-import { useState } from 'react'
-
 import { formatDate } from '@medea/utils'
 
-import { useCreateMedeaNote, useNavigate } from '../../hooks'
-import { IconButton } from '../atoms'
-import { Badges } from './badges'
+import { useCreateNoteForm } from '../../../hooks'
+import { IconButton } from '../../atoms'
+import { Badges } from '../badges'
 
 export const AddNoteCard = (): JSX.Element => {
-  const navigate = useNavigate()
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const mutation = useCreateMedeaNote()
+  const [{ errors, props }, handleSubmit] = useCreateNoteForm()
 
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <Badges
         tags={[formatDate(new Date(Date.now()), 'MMM d, y')]}
-        alignment='right'
+        align='right'
       />
       <div className='w-full'>
         <div className='relative flex flex-col min-w-0 break-words bg-material-gray rounded mb-6 xl:mb-0 shadow-lg border-bright-turquoise-350 border-2'>
@@ -30,11 +25,13 @@ export const AddNoteCard = (): JSX.Element => {
                   type='text'
                   placeholder='Title...'
                   className='placeholder-gray-500 font-semibold text-witch-haze-50 relative bg-material-gray text-xl border-bright-turquoise-350 border-b-2 outline-none focus:outline-none focus:none w-full'
-                  value={title}
-                  onChange={(event) => {
-                    setTitle(event.target.value)
-                  }}
+                  {...props.title}
                 />
+                {errors.title && (
+                  <span className='text-xs leading-snug text-witch-haze-50'>
+                    {errors.title.message}
+                  </span>
+                )}
               </div>
             </div>
             <div className='flex flex-wrap  mt-3'>
@@ -43,25 +40,16 @@ export const AddNoteCard = (): JSX.Element => {
                   type='text'
                   placeholder='Description...'
                   className='placeholder-gray-500 text-white relative bg-material-gray text-sm outline-none focus:outline-none focus:none w-full border-bright-turquoise-350 border-b-2'
-                  value={description}
-                  onChange={(event) => {
-                    setDescription(event.target.value)
-                  }}
+                  {...props.description}
                 />
+                {errors.description && (
+                  <span className='text-xs leading-snug text-witch-haze-50'>
+                    {errors.description.message}
+                  </span>
+                )}
               </div>
               <div className='relative w-auto flex-initial ml-4'>
-                <IconButton
-                  onClick={async () => {
-                    const { id } = await mutation.mutateAsync({
-                      title,
-                      description,
-                      text: `# This Is Your New Note\n\n> Thank you using Medea! ❤️\n\n## Tips\n* You can click the 👁 to preview\n* You can click the 📝 to edit\n\n`,
-                      tags: [],
-                    })
-
-                    navigate.toNote(id)
-                  }}
-                >
+                <IconButton type='submit'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-6 w-6'
@@ -82,6 +70,6 @@ export const AddNoteCard = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </>
+    </form>
   )
 }

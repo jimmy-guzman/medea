@@ -1,10 +1,10 @@
 import { truncate } from '@medea/utils'
 
-interface CardProps {
+export interface CardProps {
   title: string
   description?: string | null
   icon?: () => React.ReactNode
-  text?: string
+  text?: string | null
 }
 
 export const Card = ({
@@ -27,7 +27,9 @@ export const Card = ({
               </span>
             </div>
             {icon && (
-              <div className='relative w-auto pl-4 flex-initial'>{icon()}</div>
+              <div className='relative w-auto pl-4 flex-initial text-hot-pink-400'>
+                {icon()}
+              </div>
             )}
           </div>
           {text && (

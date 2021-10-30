@@ -8,10 +8,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": [
-            "dependencies",
-            "devDependencies"
-          ]
+          "projects": ["dependencies", "devDependencies"]
         }
       ]
     },
@@ -27,10 +24,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": [
-            "dependencies",
-            "devDependencies"
-          ]
+          "projects": ["dependencies", "devDependencies"]
         }
       ]
     },
@@ -41,6 +35,11 @@
     },
     "@medea/utils": {
       "root": "libs/utils",
+      "projectType": "library",
+      "implicitDependencies": []
+    },
+    "@medea/mocks": {
+      "root": "libs/mocks",
       "projectType": "library",
       "implicitDependencies": []
     }

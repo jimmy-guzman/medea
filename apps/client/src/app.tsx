@@ -16,7 +16,7 @@ export const App = (): JSX.Element => {
 
   return (
     <div className='bg-gray-800 h-full min-h-screen'>
-      <Navigation />
+      <Navigation links={[{ path: '/notes', name: 'notes' }]} />
       <Container>
         <AnimatePresence exitBeforeEnter initial={false}>
           <Suspense fallback={null}>
