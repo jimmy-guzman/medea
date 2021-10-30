@@ -27,7 +27,7 @@
     "@testing-library/react": "^12.1.0",
     "@types/react-router-dom": "^5.1.9",
     "assert": "^2.0.0",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^5.0.0",
     "rollup-plugin-visualizer": "^5.5.2",
     "vite": "^2.5.4",
     "vite-preset-react": "^2.0.0"
