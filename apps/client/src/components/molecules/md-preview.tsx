@@ -6,10 +6,8 @@ interface MDPreviewProps {
 
 export const MDPreview = ({ md }: MDPreviewProps): JSX.Element => {
   return (
-    <>
-      <div className='container bg-white py-2 px-6 rounded-sm'>
-        <MDEditor.Markdown source={md} />
-      </div>
-    </>
+    <div className='container bg-white py-2 px-6 rounded-sm'>
+      <MDEditor.Markdown source={md} />
+    </div>
   )
 }

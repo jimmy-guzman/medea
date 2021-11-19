@@ -1,10 +1,9 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 export interface NavigationLinkProps {
-  path?: string
-  name?: string
   children?: React.ReactNode
+  name?: string
+  path?: string
 }
 
 export const NavigationLink = ({

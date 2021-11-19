@@ -32,6 +32,7 @@ export const ViewNotes = (): JSX.Element => {
               />
               <Card
                 {...cardProps}
+                // eslint-disable-next-line react/no-unstable-nested-components
                 icon={() => (
                   <Link to={`notes/${id}`}>
                     <EyeIcon />

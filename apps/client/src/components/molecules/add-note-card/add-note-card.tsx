@@ -4,8 +4,12 @@ import { useCreateNoteForm } from '../../../hooks'
 import { IconButton } from '../../atoms'
 import { Badges } from '../badges'
 
+// TODO: reduce max-lines per function
+// eslint-disable-next-line max-lines-per-function
 export const AddNoteCard = (): JSX.Element => {
-  const [{ errors, props }, handleSubmit] = useCreateNoteForm()
+  // TODO: rename props
+  const [{ errors, props: createNotFormProps }, handleSubmit] =
+    useCreateNoteForm()
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,7 +29,7 @@ export const AddNoteCard = (): JSX.Element => {
                   type='text'
                   placeholder='Title...'
                   className='placeholder-gray-500 font-semibold text-witch-haze-50 relative bg-material-gray text-xl border-bright-turquoise-350 border-b-2 outline-none focus:outline-none focus:none w-full'
-                  {...props.title}
+                  {...createNotFormProps.title}
                 />
                 {errors.title && (
                   <span className='text-xs leading-snug text-witch-haze-50'>
@@ -40,7 +44,7 @@ export const AddNoteCard = (): JSX.Element => {
                   type='text'
                   placeholder='Description...'
                   className='placeholder-gray-500 text-white relative bg-material-gray text-sm outline-none focus:outline-none focus:none w-full border-bright-turquoise-350 border-b-2'
-                  {...props.description}
+                  {...createNotFormProps.description}
                 />
                 {errors.description && (
                   <span className='text-xs leading-snug text-witch-haze-50'>

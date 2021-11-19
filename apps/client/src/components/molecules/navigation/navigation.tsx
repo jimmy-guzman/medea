@@ -21,7 +21,7 @@ export const Navigation = ({ links }: NavigationProps): JSX.Element => {
         ))}
       </div>
       <div className='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
-        <div className='text-sm lg:flex-grow'></div>
+        <div className='text-sm lg:flex-grow' />
       </div>
     </nav>
   )

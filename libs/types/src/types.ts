@@ -1,8 +1,12 @@
-export type JSONPrimitive = string | number | boolean | null
-export type JSONValue = JSONPrimitive | JSONObject | JSONArray
-export type JSONObject = { [member: string]: JSONValue }
+export type JSONPrimitive = boolean | number | string | null
+// eslint-disable-next-line no-use-before-define
+export type JSONValue = JSONArray | JSONObject | JSONPrimitive
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+export interface JSONObject {
+  [member: string]: JSONValue
+}
 export type JSONArray = Array<JSONValue>
-export type JSONLike = JSONObject | JSONArray
+export type JSONLike = JSONArray | JSONObject
 
 export type Nullable<T> = T | null
 export type Emptiable<T> = T[] | []

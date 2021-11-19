@@ -6,13 +6,7 @@ import { Navigation, NavigationProps } from './navigation'
 export default {
   component: Navigation,
   title: 'apps/client/molecules/Navigation',
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
+  decorators: [(storyFn) => <MemoryRouter>{storyFn()}</MemoryRouter>],
 } as Meta
 
 const Template: Story<NavigationProps> = (args) => <Navigation {...args} />

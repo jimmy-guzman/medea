@@ -13,6 +13,7 @@ import { EyeIcon, PencilIcon, TrashIcon } from '../../icons'
 import { Alert, Skeleton, Button, Link } from '../atoms'
 import { MDPreview, Badges, MDEdit } from '../molecules'
 
+// eslint-disable-next-line max-lines-per-function
 export const ViewNote = (): JSX.Element => {
   const navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
@@ -46,7 +47,7 @@ export const ViewNote = (): JSX.Element => {
           <Link to={`/json/${id}`}> VIEW JSON</Link>
           <div className='flex gap-1'>
             <Button
-              onClick={async () => {
+              onClick={async (): Promise<void> => {
                 await deleteMedeaNote(id)
                 navigate.home()
               }}
@@ -54,8 +55,8 @@ export const ViewNote = (): JSX.Element => {
               <TrashIcon />
             </Button>
             <Button
-              onClick={() => {
-                setIsEditMode((isEditMode) => !isEditMode)
+              onClick={(): void => {
+                setIsEditMode((prevIsEditMode) => !prevIsEditMode)
               }}
             >
               {isEditMode ? <EyeIcon /> : <PencilIcon />}

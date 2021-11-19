@@ -1,18 +1,19 @@
+/* eslint-disable new-cap */
 import { Static, Type } from '@sinclair/typebox'
 
 export const MedeaNoteSchema = Type.Object({
-  id: Type.String(),
   createdAt: Type.String(),
-  updatedAt: Type.String(),
-  title: Type.String(),
-  text: Type.String(),
   description: Type.Union([Type.String(), Type.Null()]),
+  id: Type.String(),
   tags: Type.Array(
     Type.Object({
       id: Type.String(),
       title: Type.String(),
     })
   ),
+  text: Type.String(),
+  title: Type.String(),
+  updatedAt: Type.String(),
 })
 
 export type MedeaNote = Static<typeof MedeaNoteSchema>

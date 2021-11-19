@@ -4,14 +4,14 @@ import fp from 'fastify-plugin'
 import schema from '../../prisma/schema.prisma'
 import prisma from './prisma-client'
 
-export const prismaPlugin: FastifyPluginAsync = fp(async (server) => {
+export const prismaPlugin: FastifyPluginAsync = fp(async (fastifyServer) => {
   if (schema) {
     await prisma.$connect()
   }
 
-  server.decorate('prisma', prisma)
+  fastifyServer.decorate('prisma', prisma)
 
-  server.addHook('onClose', async (server) => {
+  fastifyServer.addHook('onClose', (server) => {
     server.log.info('disconnecting Prisma from DB')
   })
 })

@@ -6,13 +6,7 @@ import { Link, LinkProps } from './link'
 export default {
   component: Link,
   title: 'apps/client/atoms/Link',
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
+  decorators: [(storyFn) => <MemoryRouter>{storyFn()}</MemoryRouter>],
 } as Meta
 
 const Template: Story<LinkProps> = (args) => <Link {...args} />
