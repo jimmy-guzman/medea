@@ -5,17 +5,17 @@ import { useCreateMedeaNote } from './notes'
 import { useNavigate } from './use-navigate'
 
 interface FormData {
-  title: string
   description: string
+  title: string
 }
 
 export const useCreateNoteForm = (): [
   {
-    props: { title: UseFormRegisterReturn; description: UseFormRegisterReturn }
     errors: {
-      title?: FieldError
       description?: FieldError
+      title?: FieldError
     }
+    props: { description: UseFormRegisterReturn; title: UseFormRegisterReturn }
   },
   (formData?: BaseSyntheticEvent) => Promise<void>
 ] => {

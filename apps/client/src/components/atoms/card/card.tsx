@@ -1,17 +1,17 @@
 import { truncate } from '@medea/utils'
 
 export interface CardProps {
-  title: string
   description?: string | null
   icon?: () => React.ReactNode
   text?: string | null
+  title: string
 }
 
 export const Card = ({
-  title,
   description,
   icon,
   text,
+  title,
 }: CardProps): JSX.Element => {
   return (
     <div className='w-full'>

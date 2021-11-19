@@ -1,27 +1,11 @@
-env:
-  browser: true
-  es2021: true
-  node: true
 extends:
-  - eslint:recommended
-  - plugin:@typescript-eslint/recommended
-  - prettier
-  - plugin:import/recommended
-  - plugin:import/typescript
-  - plugin:jest/recommended
-  - plugin:jest/style
-parser: '@typescript-eslint/parser'
+  - jimmy-guzman
+  - jimmy-guzman/typescript
+  - jimmy-guzman/jest
 parserOptions:
-  ecmaFeatures:
-    jsx: true
-  ecmaVersion: 12
-  sourceType: module
-plugins:
-  - '@typescript-eslint'
-  - import
+  project: ['./tsconfig.json']
 rules:
   # style
-  prefer-arrow-callback: error
   import/order:
     - error
     - groups: [builtin, external, type, internal, [parent, sibling, index]]
@@ -31,5 +15,4 @@ rules:
       alphabetize:
         order: 'asc'
         caseInsensitive: true
-  # best practices
-  '@typescript-eslint/explicit-module-boundary-types': error
+  import/no-extraneous-dependencies: off

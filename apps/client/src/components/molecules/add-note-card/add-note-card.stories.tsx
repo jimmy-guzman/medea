@@ -5,6 +5,7 @@ import { MemoryRouter as Router } from 'react-router-dom'
 import { handlers } from '@medea/mocks'
 
 import { AddNoteCard } from './add-note-card'
+
 const queryClient = new QueryClient()
 
 export default {

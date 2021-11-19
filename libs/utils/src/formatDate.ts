@@ -10,7 +10,7 @@ const options = <const>{
   'MMM d': { ...day, ...time },
 }
 
-const isDate = (date: string | Date): date is Date => {
+const isDate = (date: Date | string): date is Date => {
   return (
     Object.prototype.toString.call(date) === '[object Date]' &&
     date instanceof Date
@@ -23,7 +23,7 @@ const isDate = (date: string | Date): date is Date => {
  * formatDate("2021-09-23T04:15:59.634Z") // Sep 22, 11:15 PM
  */
 export const formatDate = (
-  date: string | Date,
+  date: Date | string,
   format: KnownKeys<typeof options> = 'MMM d, h:m'
 ): string => {
   const dateConstructor = isDate(date) ? date : new Date(date)

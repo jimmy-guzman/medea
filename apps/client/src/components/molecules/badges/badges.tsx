@@ -1,12 +1,12 @@
 import { Badge } from '../../atoms'
 
 export interface BadgesProps {
+  align?: 'left' | 'right'
+  isInverted?: boolean
   /**
    * List of tags to render as badges (*will strip any duplicate strings*)
    */
   tags: string[]
-  align?: 'right' | 'left'
-  isInverted?: boolean
 }
 
 /**
@@ -14,8 +14,8 @@ export interface BadgesProps {
  */
 export const Badges = ({
   align = 'left',
-  tags,
   isInverted,
+  tags,
 }: BadgesProps): JSX.Element => {
   return (
     <div

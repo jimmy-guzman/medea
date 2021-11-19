@@ -19,26 +19,30 @@ const schema = {
 }
 
 export const getMedeaNote = async (server: FastifyInstance): Promise<void> => {
-  server.get<{
-    Params: MedeaNoteParams
-    Reply: MedeaNote | MedeaError
-  }>(`${MEDEA_NOTES_ROUTE}/:id`, { schema }, async (request, reply) => {
-    try {
-      const id = request.params.id
-      const medea = await server.prisma.medeaNote.findUnique({
-        where: { id },
-        include: { tags: true },
-      })
+  await Promise.resolve(
+    server.get<{
+      Params: MedeaNoteParams
+      Reply: MedeaError | MedeaNote
+    }>(`${MEDEA_NOTES_ROUTE}/:id`, { schema }, async (request, reply) => {
+      try {
+        const {
+          params: { id },
+        } = request
+        const medea = await server.prisma.medeaNote.findUnique({
+          where: { id },
+          include: { tags: true },
+        })
 
-      if (medea) {
-        return reply.code(200).send(buildMedeaNote(medea))
+        if (medea) {
+          return await reply.code(200).send(buildMedeaNote(medea))
+        }
+
+        return await reply.code(404).send(new NotFoundError(id))
+      } catch (error: unknown) {
+        request.log.error(error)
+
+        return reply.code(500).send(new GenericError())
       }
-
-      return reply.code(404).send(new NotFoundError(id))
-    } catch (error) {
-      request.log.error(error)
-
-      return reply.code(500).send(new GenericError())
-    }
-  })
+    })
+  )
 }

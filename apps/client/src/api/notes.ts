@@ -18,7 +18,7 @@ export const getMedeaNote = async (id: string): Promise<MedeaNote> => {
 
 export const createMedeaNote = async (
   json: CreateMedeaNoteBody
-): Promise<{ id: string; createAt: string }> => {
+): Promise<{ createAt: string; id: string }> => {
   return api.post(`notes`, { json }).json()
 }
 

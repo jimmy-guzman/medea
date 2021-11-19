@@ -4,7 +4,7 @@ import { HEALTH_ROUTE } from './constants'
 import { prismaPlugin, swaggerConfig } from './plugins'
 import { notesRoutes } from './routes'
 
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT ?? 7000
 
 const server = fastify({
   logger: {
@@ -25,7 +25,7 @@ export const app = async (): Promise<void> => {
     })
     await server.register(notesRoutes)
     await server.listen(PORT)
-  } catch (err) {
+  } catch (err: unknown) {
     server.log.error(err)
     process.exit(1)
   }

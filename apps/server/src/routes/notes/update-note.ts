@@ -11,7 +11,7 @@ import {
 } from '@medea/models'
 
 import { MEDEA_NOTES_ROUTE } from '../../constants'
-import { GenericError } from './../errors'
+import { GenericError } from '../errors'
 import { buildMedeaNote } from './utils'
 
 const schema = {
@@ -23,24 +23,26 @@ const schema = {
 export const updateMedeaNote = async (
   server: FastifyInstance
 ): Promise<void> => {
-  server.put<{
-    Params: MedeaNoteParams
-    Body: MutateMedeaNoteBody
-    Reply: MedeaNote | MedeaError
-  }>(`${MEDEA_NOTES_ROUTE}/:id`, { schema }, async (request, reply) => {
-    try {
-      const note = await server.prisma.medeaNote.update({
-        where: { id: request.params.id },
-        data: {
-          text: request.body.text,
-        },
-      })
+  await Promise.resolve(
+    server.put<{
+      Body: MutateMedeaNoteBody
+      Params: MedeaNoteParams
+      Reply: MedeaError | MedeaNote
+    }>(`${MEDEA_NOTES_ROUTE}/:id`, { schema }, async (request, reply) => {
+      try {
+        const note = await server.prisma.medeaNote.update({
+          where: { id: request.params.id },
+          data: {
+            text: request.body.text,
+          },
+        })
 
-      return reply.code(200).send(buildMedeaNote(note))
-    } catch (error) {
-      request.log.error(error)
+        return await reply.code(200).send(buildMedeaNote(note))
+      } catch (error: unknown) {
+        request.log.error(error)
 
-      return reply.code(500).send(new GenericError())
-    }
-  })
+        return reply.code(500).send(new GenericError())
+      }
+    })
+  )
 }
