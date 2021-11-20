@@ -123,7 +123,7 @@ importers:
       '@medea/models': workspace:*
       '@prisma/client': 3.3.0
       '@types/node': ^16.9.2
-      '@types/pino': ^6.3.11
+      '@types/pino': 7.0.4
       esbuild: ^0.13.0
       esbuild-node-externals: ^1.3.0
       fastify: ^3.21.3
@@ -147,7 +147,7 @@ importers:
     devDependencies:
       '@medea/models': link:../../libs/models
       '@types/node': 16.9.2
-      '@types/pino': 6.3.11
+      '@types/pino': 7.0.4
       esbuild: 0.13.8
       esbuild-node-externals: 1.3.0_esbuild@0.13.8
       nodemon: 2.0.12
@@ -4197,25 +4197,10 @@ packages:
     resolution: {integrity: sha512-ARATsLdrGPUnaBvxLhUlnltcMgn7pQG312S8ccdYlnyijabrX9RN/KN/iGj9Am96CoW8e/K9628BA7Bv4XHdrA==}
     dev: false
 
-  /@types/pino-pretty/4.7.1:
-    resolution: {integrity: sha512-l1ntNXdpVWsnPYUk5HyO5Lxfr38zLCgxVfEn/9Zhhm+nGF04/BiIou/m8XPwvoVZLV+livUo79VdHXMJPfUYxA==}
+  /@types/pino/7.0.4:
+    resolution: {integrity: sha512-yKw1UbZOTe7vP1xMQT+oz3FexwgIpBTrM+AC62vWgAkNRULgLTJWfYX+H5/sKPm8VXFbIcXkC3VZPyuaNioZFg==}
     dependencies:
-      '@types/pino': 6.3.11
-    dev: true
-
-  /@types/pino-std-serializers/2.4.1:
-    resolution: {integrity: sha512-17XcksO47M24IVTVKPeAByWUd3Oez7EbIjXpSbzMPhXVzgjGtrOa49gKBwxH9hb8dKv58OelsWQ+A1G1l9S3wQ==}
-    dependencies:
-      '@types/node': 16.9.2
-    dev: true
-
-  /@types/pino/6.3.11:
-    resolution: {integrity: sha512-S7+fLONqSpHeW9d7TApUqO6VN47KYgOXhCNKwGBVLHObq8HhaAYlVqUNdfnvoXjCMiwE5xcPm/5R2ZUh8bgaXQ==}
-    dependencies:
-      '@types/node': 16.9.2
-      '@types/pino-pretty': 4.7.1
-      '@types/pino-std-serializers': 2.4.1
-      sonic-boom: 2.2.3
+      pino: 6.13.2
     dev: true
 
   /@types/prettier/2.3.2:
@@ -8300,11 +8285,9 @@ packages:
   /fast-redact/3.0.2:
     resolution: {integrity: sha512-YN+CYfCVRVMUZOUPeinHNKgytM1wPI/C/UCLEi56EsY2dwwvI00kIJHJoI7pMVqGoMew8SMZ2SSfHKHULHXDsg==}
     engines: {node: '>=6'}
-    dev: false
 
   /fast-safe-stringify/2.1.1:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
-    dev: false
 
   /fastify-cors/6.0.2:
     resolution: {integrity: sha512-sE0AOyzmj5hLLRRVgenjA6G2iOGX35/1S3QGYB9rr9TXelMZB3lFrXy4CzwYVOMiujJeMiLgO4J7eRm8sQSv8Q==}
@@ -8353,7 +8336,6 @@ packages:
 
   /fastify-warning/0.2.0:
     resolution: {integrity: sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==}
-    dev: false
 
   /fastify/3.21.3:
     resolution: {integrity: sha512-4PuuCCcGZpcD9ERc8x6H7GHElcHQxHVouyANAVw/Nd9h07X63QQJ2EpHeQtuiDCjcs0pf9wKb6KIul3qCYh+1g==}
@@ -8583,7 +8565,6 @@ packages:
 
   /flatstr/1.0.12:
     resolution: {integrity: sha512-4zPxDyhCyiN2wIAtSLI6gc82/EjqZc1onI4Mz/l0pWrAlsSfYH/2ZIcU+e3oA2wDwbzIWNKwa23F8rh6+DRWkw==}
-    dev: false
 
   /flatted/3.2.2:
     resolution: {integrity: sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA==}
@@ -13353,7 +13334,6 @@ packages:
 
   /pino-std-serializers/3.2.0:
     resolution: {integrity: sha512-EqX4pwDPrt3MuOAAUBMU0Tk5kR/YcCM5fNPEzgCO2zJ5HfX0vbiH9HbJglnyeQsN96Kznae6MWD47pZB5avTrg==}
-    dev: false
 
   /pino/6.13.2:
     resolution: {integrity: sha512-vmD/cabJ4xKqo9GVuAoAEeQhra8XJ7YydPV/JyIP+0zDtFTu5JSKdtt8eksGVWKtTSrNGcRrzJ4/IzvUWep3FA==}
@@ -13366,7 +13346,6 @@ packages:
       pino-std-serializers: 3.2.0
       quick-format-unescaped: 4.0.3
       sonic-boom: 1.4.1
-    dev: false
 
   /pirates/4.0.1:
     resolution: {integrity: sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==}
@@ -13874,7 +13853,6 @@ packages:
 
   /quick-format-unescaped/4.0.3:
     resolution: {integrity: sha512-MaL/oqh02mhEo5m5J2rwsVL23Iw2PEaGVHgT2vFt8AAsr0lfvQA5dpXo9TPu0rz7tSBdUPgkbam0j/fj5ZM8yg==}
-    dev: false
 
   /quick-lru/4.0.1:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
@@ -15247,12 +15225,12 @@ packages:
     dependencies:
       atomic-sleep: 1.0.0
       flatstr: 1.0.12
-    dev: false
 
   /sonic-boom/2.2.3:
     resolution: {integrity: sha512-dm32bzlBchhXoJZe0yLY/kdYsHtXhZphidIcCzJib1aEjfciZyvHJ3NjA1zh6jJCO/OBLfdjc5iw6jLS/Go2fg==}
     dependencies:
       atomic-sleep: 1.0.0
+    dev: false
 
   /source-list-map/2.0.1:
     resolution: {integrity: sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==}
