@@ -47,9 +47,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
-    "@nrwl/cli": "^13.0.1",
-    "@nrwl/tao": "^13.0.1",
-    "@nrwl/workspace": "^13.0.1",
+    "@nrwl/cli": "13.10.6",
+    "@nrwl/tao": "13.10.6",
+    "@nrwl/workspace": "13.10.6",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/addon-postcss": "^2.0.0",
