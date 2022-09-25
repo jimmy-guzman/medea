@@ -18,6 +18,6 @@
     "@sinclair/typebox": "^0.20.5"
   },
   "devDependencies": {
-    "tsup": "^5.2.1"
+    "tsup": "5.12.9"
   }
 }
